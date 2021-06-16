@@ -1,296 +1,221 @@
--- // INFORMATION:
-- silent aim that "predicts" the player's movement
-- aimlock that manipulates the camera so you aim at the player
-- only works in synapse X or sirhurt (possibly krnl but not probe)
-- press key 1 to lock someone
-- press key2 to unlock someone
-- press key 3 to deactivate / activate the lock
-- // CREDITS:
-- made by cute_misael in roblox / mariee # 1051 (550687407020965888) in discord
-- thanks to 2a60 / Horbyss for the idea
-- // ADDITIONAL CREDITS: 
-- doxxeados_assinos (killer kitties)
-- 4PEDOFILO (4drizzy)
-- 26Skid (tfw when someone that not many know makes audios louder than yours and you tell him that he uses other people's methods and you use other kek's methods)
-- Skidable19 (tfw when you try cookie logging)
-- Finally thanks to farts on top (best on top) and R (full of virgos)
--- // NOTES:
-- fuck UserInputService all my homies use GetMouse
-- This Open Source if at least you use it give me credits peteeee
-]]
+-- // INFORMACION:
+-- silent aim que "predice" el movimiento del jugador
+-- aimlock que manipula la camara asi apuntas al jugador
+-- solo funciona en synapse X o sirhurt (posiblemente krnl pero no probe)
+-- presiona la tecla1 para lockear a alguien
+-- presiona la tecla2 para deslockear a alguien
+-- presiona la tecla3 para desactivar/activar el lock
+-- // CREDITOS:
+-- hecho por cute_misael en roblox/mariee#1051 (550687407020965888) en discord
+-- gracias a 2a60/Horbyss por la idea
+-- // CREDITOS ADICIONALES: 
+-- doxxeados_asesinos (mininos asesinos)
+-- 4PEDOFILO (4drizzy)
+-- 26Skid (tfw cuando alguien que no muchos conocen hace audios mas fuertes que los tuyos y le decis que usa metodos de otras personas y usas metodos de otros kek)
+-- Skidable19 (tfw cuando intentas cookie loggear)
+-- por ultimo gracias a pedos on top (best on top) y R (lleno de virgos)
+-- // NOTAS:
+-- fuck UserInputService all my homies use GetMouse
+-- esta Open Source si al menos lo usas dame creditos peteeee
 
-- // services
-local DAHOODPLAYERS = game: GetService ("Players")
-local thisaudiowasmadebytueniSEXdrip = game: GetService ("StarterGui")
-local FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS = game: GetService ("RunService")
 
--- // objects
+-- // servicios
+local DAHOODPLAYERS = game:GetService("Players")
+local thisaudiowasmadebytueniSEXdrip = game:GetService("StarterGui")
+local FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS = game:GetService("RunService")
+
+-- // objetos
 local THISAUDIOWASMADEBYDRIZZY = DAHOODPLAYERS.LocalPlayer
-local bite_del_87 = THISAUDIOWASMADEBYDRIZZY: GetMouse ()
-local porn_cam = workspace: FindFirstChildOfClass ("Camera") - in case da hood devs try to patch it by changing the name of the camera:]
+local mordida_del_87 = THISAUDIOWASMADEBYDRIZZY:GetMouse()
+local camara_de_la_porno = workspace:FindFirstChildOfClass("Camera") -- por si los devs de da hood intentan parchearlo cambiando el nombre de la camara :]
 
-- // variables
-local KEYS_PARA_BUSCAR_PORNOGRAPHY = techware_aimlock.keys
-local doxxeados_assinos = getrawmetatable (game)
-local dahood = doxxeados_assinos .__ namecall
+-- // variables
+local TECLAS_PARA_BUSCAR_PORNOGRAFIA = techware_aimlock.teclas
+local doxxeados_asesinos = getrawmetatable(game)
+local dahood = doxxeados_asesinos.__namecall
 local drizzy_groomer = {
-  ["activated"] = true,
-  ["victim_de_grooming"] = nil,
+  ["activado"] = true,
+  ["victima_de_grooming"] = nil,
 }
 
-- // avoid running the script if it was run before or the game is not hood
-if not techware_aimlock ["general configuration"] ["sos down"] then 
-	thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-	    Title = "TECHWARE 最好 的 代碼",
-	    Text = "the script refuses to execute because you have the value of \" sos down \ "in false"
-	})
+-- // evita ejecutar el script si ya se ejecuto antes o el juego no es da hood
+if not techware_aimlock["configuracion general"]["sos down"] then 
     return
 end 
 
-if game.PlaceId ~ = 2788229376 or TECHWARESILENTAIM_LOADED then
-	thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-	    Title = "TECHWARE 最好 的 代碼",
-	    Text = "THE GAME IS NOT DA HOOD / THE SCRIPT WAS ALREADY RUNNING BEFORE"
-	})
+if game.PlaceId ~= 2788229376 or TECHWARESILENTAIM_LOADED then
     return
 end
 
-if techware_aimlock ["general configuration"] ["metamethods mode"] and techware_aimlock ["general configuration"] ["camera manipulation mode"] then
-    thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-	    Title = "TECHWARE 最好 的 代碼",
-	    Text = "you have both methods activated silly \ nactivate only one and rerun."
-	})
+if techware_aimlock["configuracion general"]["modo metametodos"] and techware_aimlock["configuracion general"]["modo manipulacion de camara"] then
     return
 end
 
-getgenv (). TECHWARESILENTAIM_LOADED = true
+getgenv().TECHWARESILENTAIM_LOADED = true
 
-- // credits (if you really delete / edit this to put your credits, you are the saddest person in the world)
-if techware_aimlock ["general configuration"] ["metamethod mode"] then
-	thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-		Title = "TECHWARE 最好 的 代碼",
-		Text = "AIMLOCK ON \ nMODE: METATABLES POSITION SPOOFING \ nDONE BY CUTE_MISAEL"
-	})
-elseif techware_aimlock ["general configuration"] ["camera manipulation mode"] then 
-	thisaudiowasmadebytueniSEXdrip: SetCore ("n", {
-		Title = "TECHWARE 最好 的 代碼",
-		Text = "AIMLOCK ON \ nMODE: CAMERA HANDLING \ nDONE BY CUTE_MISAEL"
-	})
+-- // creditos (si de verdad eliminas/editas esto para poner tus creditos, sos la persona mas triste del mundo)
+if techware_aimlock["configuracion general"]["modo metametodos"] then
+elseif techware_aimlock["configuracion general"]["modo manipulacion de camara"] then 
 end 
 
-wait (1.5)
-
-thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-    Title = "TECHWARE 最好 的 代碼",
-    Text = "PRESS THE KEY" ..KEYS_FOR_BUSCAR_PORNOGRAPHY.key3 .. "TO ACTIVATE THE AIMLOCK"
-})
-thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-    Title = "TECHWARE 最好 的 代碼",
-    Text = "PRESS THE KEY" ..KEYS_TO SEARCH_PORNOGRAPHY.key2 .. "TO UNLOCK"
-})
-thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-    Title = "TECHWARE 最好 的 代碼",
-    Text = "PRESS THE KEY" ..KEYS_TO SEARCH_PORNOGRAPHY.key1 .. "TO LOCK SOMEONE \ n (put the mouse over the person you want to lock)"
-})
-
-- // useful functions
-function esautista (kitty_killer)
-    if DAHOODPLAYERS: GetPlayerFromCharacter (kitty_killer) then
+-- // funciones utiles
+function esautista(minino_asesino)
+    if DAHOODPLAYERS:GetPlayerFromCharacter(minino_asesino) then
         return true
     else
         return false
     end
 end
 
-function kill_and_violate_his_putrefact_body_like_haria_kiIIuli (victim)
-    return DAHOODPLAYERS: GetPlayerFromCharacter (victim)
+function matar_y_violar_su_cuerpo_putrefacto_como_haria_kiIIuli(victima)
+    return DAHOODPLAYERS:GetPlayerFromCharacter(victima)
 end
 
-function groomear (pedophile, victim, genitalia, female, minor)
-	if pedophile == "Drizzy" and victim and iswoman and minor then
-        if techware_aimlock ["general settings"]. predict_movements then
-            return victim.Character [genitalia] .Position + victim.Character.UpperTorso.Velocity * techware_aimlock ["general settings"]. pornography
+function groomear(pedofilo,victima,genitales,esmujer,esmenor)
+	if pedofilo == "Drizzy" and victima and esmujer and esmenor then
+        if techware_aimlock["configuracion general"].predice_movimientos then
+            return victima.Character[genitales].Position + victima.Character.UpperTorso.Velocity * techware_aimlock["configuracion general"].pornografia
         else
-            return victim.Character [genitals] .Position
+            return victima.Character[genitales].Position
         end
     end
 end
 
-function spectrophile (DHPlayer, fdmg)
-	if DHPlayer == "Drizzy" then
-		if tostring (fdmg) == "MainEvent" then
+function espedofilo(jugadorDeDH,fdmg)
+	if jugadorDeDH == "Drizzy" then
+		if tostring(fdmg) == "MainEvent" then
 			return true
 		end
 	end
 end
 
-function suicide (Mongolian)
-	ugly local = Mongolian.Character
-    ugly.Humanoid.Died: Connect (function ()
-		drizzy_groomer.on = false
+function suicidio(mongolico)
+	local feo = mongolico.Character
+    feo.Humanoid.Died:Connect(function()
+		drizzy_groomer.activado = false
         THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
-        thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-            Title = "TECHWARE 最好 的 代碼",
-            Text = "you died, the aimlock was deactivated."
-        })
     end)
-    ugly.BodyEffects ["KO"]. Changed: Connect (function ()
-        if ugly.BodyEffects ["KO"]. Value == true then
-            drizzy_groomer.on = false
+    feo.BodyEffects["K.O"].Changed:Connect(function()
+        if feo.BodyEffects["K.O"].Value == true then
+            drizzy_groomer.activado = false
             THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
-            thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-                Title = "TECHWARE 最好 的 代碼",
-                Text = "you have been shot, the aimlock was deactivated."
-            })
         end
     end)
 end
 
-function death (Mongolian)
-    ugly local = Mongolian.Character
-	if ugly: FindFirstChild ("BodyEffects") and ugly.BodyEffects: FindFirstChild ("KO") then
-		hong_kong = ugly.BodyEffects ["KO"]. Changed: Connect (function ()
-			if ugly.BodyEffects ["KO"]. Value == true and drizzy_pedofilo ["victim_de_grooming"] == Mongolian then
-				drizzy_groomer.on = false
+function muerte(mongolico)
+    local feo = mongolico.Character
+	if feo:FindFirstChild("BodyEffects") and feo.BodyEffects:FindFirstChild("K.O") then
+		hong_kong = feo.BodyEffects["K.O"].Changed:Connect(function()
+			if feo.BodyEffects["K.O"].Value == true and drizzy_pedofilo["victima_de_grooming"] == mongolico then
+				drizzy_groomer.activado = false
 				drizzy_groomer.victima_de_grooming = nil
 				THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
-				thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-					Title = "TECHWARE 最好 的 代碼",
-					Text = "they threw the one you had locked, the aimlock was deactivated."
-				})
+
 			end
-			hong_kong: Disconnect () - we don't want client lag
+			hong_kong:Disconnect() -- no queremos lag en el cliente
 		end)
 	end
-	china = ugly.Humanoid.Died: Connect (function ()
-		if drizzy_pedofilo ["victim_de_grooming"] == Mongolian then
-			drizzy_groomer.on = false
+	china = feo.Humanoid.Died:Connect(function()
+		if drizzy_pedofilo["victima_de_grooming"] == mongolico then
+			drizzy_groomer.activado = false
 			drizzy_groomer.victima_de_grooming = nil
 			THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
-			thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-				Title = "TECHWARE 最好 的 代碼",
-				Text = "the one you had locked died, the aimlock was deactivated."
-			})
 		end
-		china: Disconnect () - we don't want client lag
+		china:Disconnect() -- no queremos lag en el cliente
 	end)
 end
 
-function go_a_hong_kong (geographic_location)
-	- this used to be a Tween, but I decided to change it to this below
-	- since there were many bugs with that
-	-:]
-    porn_cam.CoordinateFrame = geographic_location
+function ir_a_hong_kong(ubicacion_geografica)
+	-- esto antes era un Tween, pero decidi cambiarlo a esto de abajo
+	-- ya que habian muchos bugs con eso
+	-- :]
+    camara_de_la_porno.CoordinateFrame = ubicacion_geografica
 end
 
-- // disable aimlock on death
-suicide (THISAUDIOWASMADEBYDRIZZY)
+-- // desactivar el aimlock al morir
+suicidio(THISAUDIOWASMADEBYDRIZZY)
 
-THISAUDIOWASMADEBYDRIZZY.CharacterAdded: Connect (function (asjfkg)
-	repeat wait () until asjfkg: FindFirstChild ("Humanoid")
-	repeat wait () until asjfkg: FindFirstChild ("BodyEffects")
-	wait (0.2)
-    suicide (THISAUDIOWASMADEBYDRIZZY)
+THISAUDIOWASMADEBYDRIZZY.CharacterAdded:Connect(function(asjfkg)
+	repeat wait() until asjfkg:FindFirstChild("Humanoid")
+	repeat wait() until asjfkg:FindFirstChild("BodyEffects")
+	wait(0.2)
+    suicidio(THISAUDIOWASMADEBYDRIZZY)
 end)
 
-- // in case the fag you were locking leaves
-DAHOODPLAYERS.PlayerRemoving: Connect (function (asshole)
-    if asshole == drizzy_groomer ["victim_of_grooming"] then
-        drizzy_groomer ["victim_de_grooming"] = nil
-        drizzy_groomer.on = false
-        thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-            Title = "TECHWARE 最好 的 代碼",
-            Text = "THE MARICON YOU LOCKED LEFT HAHAHA XD \ nSE I UNLOCKED AND DEACTIVATED THE AIMLOCK"
-        })
+-- // por si el maricon que estabas lockeando se va
+DAHOODPLAYERS.PlayerRemoving:Connect(function(pelotudo)
+    if pelotudo == drizzy_groomer["victima_de_grooming"] then
+        drizzy_groomer["victima_de_grooming"] = nil
+        drizzy_groomer.activado = false
     end
 end)
 
--- // Connection
-bite_of_87.KeyDown: Connect (function (AMONGUS)
-    if AMONGUS: lower () == PORNOGRAPHY_SEARCH_KEYS.key1: lower () then
-        local genital = bite_del_87.Target
+-- // conexion
+mordida_del_87.KeyDown:Connect(function(AMONGUS)
+    if AMONGUS:lower() == TECLAS_PARA_BUSCAR_PORNOGRAFIA.tecla1:lower() then
+        local genital = mordida_del_87.Target
         if genital then
-            local victim_de_grooming = genital.Parent
-            if victim_de_grooming: IsA ("Accessory") then
-                victim_de_grooming = victim_de_grooming.Parent
-            elseif victim_de_grooming.Name == "SpecialParts" then
-                victim_de_grooming = victim_de_grooming.Parent.Parent
+            local victima_de_grooming = genital.Parent
+            if victima_de_grooming:IsA("Accessory") then
+                victima_de_grooming = victima_de_grooming.Parent
+            elseif victima_de_grooming.Name == "SpecialParts" then
+                victima_de_grooming = victima_de_grooming.Parent.Parent
             end
-            if victim_of_grooming: FindFirstChild ("Humanoid") and esautista (victim_of_grooming) then
-                drizzy_groomer.victima_de_grooming = kill_and_violate_his_putrefact_body_like_haria_kiIIuli (victim_of_grooming)
-                thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-                    Title = "TECHWARE 最好 的 代碼",
-                    Text = "aimlock activated on:" ..victima_de_grooming.Name
-                })
-                if victim_de_grooming: FindFirstChild ("BodyEffects") and victim_de_grooming.BodyEffects: FindFirstChild ("KO") then 
-					if victim_de_grooming.BodyEffects ["KO"]. Value == false then
-						death (kill_and_violate_his_putrefactory_body_like_haria_kiIIuli (victim_of_grooming))
+            if victima_de_grooming:FindFirstChild("Humanoid") and esautista(victima_de_grooming) then
+                drizzy_groomer.victima_de_grooming = matar_y_violar_su_cuerpo_putrefacto_como_haria_kiIIuli(victima_de_grooming)
+                if victima_de_grooming:FindFirstChild("BodyEffects") and victima_de_grooming.BodyEffects:FindFirstChild("K.O") then 
+					if victima_de_grooming.BodyEffects["K.O"].Value == false then
+						muerte(matar_y_violar_su_cuerpo_putrefacto_como_haria_kiIIuli(victima_de_grooming))
 					end
                 end
            end
         end
-    elseif AMONGUS: lower () == PORNOGRAPHY_SEARCH_KEYS.key2: lower () then
+    elseif AMONGUS:lower() == TECLAS_PARA_BUSCAR_PORNOGRAFIA.tecla2:lower() then
         if drizzy_groomer.victima_de_grooming then
             local anterior_victima = drizzy_groomer.victima_de_grooming
             drizzy_groomer.victima_de_grooming = nil
-            thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-                Title = "TECHWARE 最好 的 代碼",
-                Text = "aimlock disabled on:" ..anterior_victima.Name
-            })
-	    wait (0.3)
+	    wait(0.3)
 	    THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic 
         end
-    elseif AMONGUS: lower () == PORNOGRAPHY_SEARCH_KEYS.key3: lower () then
-        if drizzy_groomer.on == true then
-            drizzy_groomer.on = false
-            thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-                Title = "TECHWARE 最好 的 代碼",
-                Text = "aimlock 不再 被 激活 (false)"
-            })
-            wait (0.3)
+    elseif AMONGUS:lower() == TECLAS_PARA_BUSCAR_PORNOGRAFIA.tecla3:lower() then
+        if drizzy_groomer.activado == true then
+            drizzy_groomer.activado = false
+            wait(0.3)
             THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic 
         else
-            drizzy_groomer.enabled = true
-            thisaudiowasmadebytueniSEXdrip: SetCore ("SendNotification", {
-                Title = "TECHWARE 最好 的 代碼",
-                Text = "aimlock 活性 (true)"
-            })
+            drizzy_groomer.activado = true
         end
     end
 end)
 
-if techware_aimlock ["general configuration"] ["metamethod mode"] then
-    - // moment metamethods
-    setreadonly (doxxeados_assinos, false)
-    doxxeados_assinos .__ namecall = newcclosure (function (self, ...) 
-        local dripin_audios_methods = {...}
-        local audio_creation_loud = getnamecallmethod ()
-        if creation_of_audios_loud == "FireServer" and espedofilo ("Drizzy", self) and methods_de_audios_de_dripin [1] == "UpdateMousePos" and drizzy_groomer.enabled and drizzy_groomer ["victim_de_grooming"] then 
-            dripin_audios_methods [2] = groomear ("Drizzy", drizzy_groomer ["victim_de_grooming"], techware_aimlock ["general configuration"]. lockear_a or "Head", true, true)
+if techware_aimlock["configuracion general"]["modo metametodos"] then
+    -- // momento metamethods
+    setreadonly(doxxeados_asesinos,false)
+    doxxeados_asesinos.__namecall = newcclosure(function(self,...) 
+        local metodos_de_audios_de_dripin = {...}
+        local creacion_de_audios_loud = getnamecallmethod()
+        if creacion_de_audios_loud == "FireServer" and espedofilo("Drizzy",self) and metodos_de_audios_de_dripin[1] == "UpdateMousePos" and drizzy_groomer.activado and drizzy_groomer["victima_de_grooming"] then 
+            metodos_de_audios_de_dripin[2] = groomear("Drizzy",drizzy_groomer["victima_de_grooming"],techware_aimlock["configuracion general"].lockear_a or "Head",true,true)
         end
-        return dahood (self, unpack (dripin_aud_methods))
+        return dahood(self,unpack(metodos_de_audios_de_dripin))
     end)
-    setreadonly (doxxeados_assinos, true)
-elseif techware_aimlock ["general configuration"] ["camera manipulation mode"] then
-	- // BindToRenderStep is faster than just using RenderStepped
-FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS: BindToRenderStep ("HONG KONG", Enum.RenderPriority.First.Value, function ()
-	local genital_name = techware_aimlock ["general settings"]. lockear_a
-        if drizzy_groomer.enabled and drizzy_groomer ["victim_de_grooming"] then
-		- this shit looks like this since I wanted it to look more organized:]
+    setreadonly(doxxeados_asesinos,true)
+elseif techware_aimlock["configuracion general"]["modo manipulacion de camara"] then
+	-- // BindToRenderStep es mas rapido que usar solo RenderStepped
+FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS:BindToRenderStep("HONG KONG",Enum.RenderPriority.First.Value,function()
+	local nombre_del_genital = techware_aimlock["configuracion general"].lockear_a
+        if drizzy_groomer.activado and drizzy_groomer["victima_de_grooming"] then
+		-- esta mierda se ve asi ya que queria que se vea mas organizado :]
             	THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.LockFirstPerson
-            	go_a_hong_kong (
-			CFrame.new (
-				porn_cam.CoordinateFrame.p, 
-				CFrame.new (drizzy_groomer ["victim_de_grooming"]. Character [genital_name] .Position - Vector3.new (0, techware_aimlock ["general settings"]. Y, 0)). P 
+            	ir_a_hong_kong(
+			CFrame.new(
+				camara_de_la_porno.CoordinateFrame.p, 
+				CFrame.new(drizzy_groomer["victima_de_grooming"].Character[nombre_del_genital].Position - Vector3.new(0,techware_aimlock["configuracion general"].Y,0)).p 
 			)
 		)
         end
 end)
-else
-    thisaudiowasmadebytueniSEXdrip: SetCore ("", {
-        Title = "TECHWARE 最好 的 代碼",
-        Text = "somehow, neither of the two options is on what the fuck harry"
-    })
     return
 end
 
