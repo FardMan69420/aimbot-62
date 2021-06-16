@@ -1,4 +1,45 @@
 --[[
+                                  ███▄,                              ,╓╖╓,
+                                   ╙█████░▒▄'                      ▄███▒▓▓╣╣╢╗
+                                      ▀▀█████▄,:                  ▐█████████▓▓▓▄
+                                          ` █▓░  █╖               ████████▓▄▓▀██
+                                            '██▄▄█▓▒╗,             ███████▀▀▀██▀
+                                              ▀█████▓▒╢╖            ▀██▄▄░░░░sT
+                                                ██████▓╬╢╖          └███░░░░░─
+                                                 ▀█████▓╣╣▒╣         ███▄µ▒░░
+                                                   ▀████▓▓▓▓╫┐       ,██▀▀
+                                                     ████▓▓█▓▌@▓▒▓▒▄@▓█▓µ▌\  ┌╖
+                                                      ▐███████▓▓▓▓▓▒▄▌╢╢╣▀▒ ,░░░▒▒∩,,
+                                                       ▀███████▓█▓▓╩▒▀█▄▒▒▒▄▒░░░|░▒░░]▒
+                                                          ▀████████▓▓▓▒▀███Ñ▓▒░▒░░░░░▒▒▒
+                                                           ░`▀██████▓▓▓@▒███▒▒▒▒▀▒¢g▄╢▒░
+                                                              ▐█████▓▓▓▓╣▓▒██▌▒▒▒▒▒▒▐███▄
+                                                             ░ ██████▓▓▓▓▌Ñ▓▓▀██▄▒╢¼████æ▄
+                                                               ▀███████▓███▓▓▓▓█░░░░▀▀▀▀██▄
+                                                              ╒█████████▓██▓▓▓▓█▒▒▒▒▒▒▒▒▒░░▄
+                                                             ,▓█╣▓██▓▓███████▓▓█▒▒▒╢╢▒▒▒▒▒▒░
+                                                            ▄▓█▓▄▓███▓█████████████▄▒╢▓╣▓▓╜
+                                                           ▐████▓▓██▓▓▓▓▒▒╢╣╣▒▒▒▀█▀█-└▀▀`
+                                        ▄▄▄█████▓▓█████  ▄████▄   ██░ ██  █     █░ ▄▄▄       ██▀███  ▓█████ 
+                                        ▓  ██▒ ▓▒▓█   ▀ ▒██▀ ▀█  ▓██░ ██▒▓█░ █ ░█░▒████▄    ▓██ ▒ ██▒▓█   ▀ 
+                                        ▒ ▓██░ ▒░▒███   ▒▓█    ▄ ▒██▀▀██░▒█░ █ ░█ ▒██  ▀█▄  ▓██ ░▄█ ▒▒███   
+                                        ░ ▓██▓ ░ ▒▓█  ▄ ▒▓▓▄ ▄██▒░▓█ ░██ ░█░ █ ░█ ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓█  ▄ 
+                                          ▒██▒ ░ ░▒████▒▒ ▓███▀ ░░▓█▒░██▓░░██▒██▓  ▓█   ▓██▒░██▓ ▒██▒░▒████▒
+                                          ▒ ░░   ░░ ▒░ ░░ ░▒ ▒  ░ ▒ ░░▒░▒░ ▓░▒ ▒   ▒▒   ▓▒█░░ ▒▓ ░▒▓░░░ ▒░ ░
+                                            ░     ░ ░  ░  ░  ▒    ▒ ░▒░ ░  ▒ ░ ░    ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ░  ░
+                                          ░         ░   ░         ░  ░░ ░  ░   ░    ░   ▒     ░░   ░    ░   
+                                                    ░  ░░ ░       ░  ░  ░    ░          ░  ░   ░        ░  ░
+                                                        ░                                                   
+                                         ▄▄▄▄ ▓██   ██▓    ███▄ ▄███▓ ██▓  ██████  ▄▄▄      ▓█████  ██▓    
+                                        ▓█████▄▒██  ██▒   ▓██▒▀█▀ ██▒▓██▒▒██    ▒ ▒████▄    ▓█   ▀ ▓██▒    
+                                        ▒██▒ ▄██▒██ ██░   ▓██    ▓██░▒██▒░ ▓██▄   ▒██  ▀█▄  ▒███   ▒██░    
+                                        ▒██░█▀  ░ ▐██▓░   ▒██    ▒██ ░██░  ▒   ██▒░██▄▄▄▄██ ▒▓█  ▄ ▒██░    
+                                        ░▓█  ▀█▓░ ██▒▓░   ▒██▒   ░██▒░██░▒██████▒▒ ▓█   ▓██▒░▒████▒░██████▒
+                                        ░▒▓███▀▒ ██▒▒▒    ░ ▒░   ░  ░░▓  ▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░░░ ▒░ ░░ ▒░▓  ░
+                                        ▒░▒   ░▓██ ░▒░    ░  ░      ░ ▒ ░░ ░▒  ░ ░  ▒   ▒▒ ░ ░ ░  ░░ ░ ▒  ░
+                                         ░    ░▒ ▒ ░░     ░      ░    ▒ ░░  ░  ░    ░   ▒      ░     ░ ░   
+                                         ░     ░ ░               ░    ░        ░        ░  ░   ░  ░    ░  ░
+                                              ░░ ░                                                         
 -- // INFORMACION:
 -- silent aim que "predice" el movimiento del jugador
 -- aimlock que manipula la camara asi apuntas al jugador
@@ -42,24 +83,24 @@ local drizzy_groomer = {
 -- // evita ejecutar el script si ya se ejecuto antes o el juego no es da hood
 if not techware_aimlock["configuracion general"]["sos down"] then 
 	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-	    Title="suck my dick",
-	    Text = "script not work" en false
+	    Title="TECHWARE 最好的代碼",
+	    Text = "el script se niega a ejecutar debido a que tenes el valor de \"sos down\" en false"
 	})
     return
 end 
 
 if game.PlaceId ~= 2788229376 or TECHWARESILENTAIM_LOADED then
 	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-	    Title="suck my dick",
-	    Text = "this isnt dahood"
+	    Title="TECHWARE 最好的代碼",
+	    Text = "EL JUEGO NO ES DA HOOD/EL SCRIPT YA FUE EJECUTADO ANTES"
 	})
     return
 end
 
 if techware_aimlock["configuracion general"]["modo metametodos"] and techware_aimlock["configuracion general"]["modo manipulacion de camara"] then
     thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-	    Title="suck my dick",
-	    Text = "only run one"
+	    Title="TECHWARE 最好的代碼",
+	    Text = "tenes los dos metodos activados tontuelo\nactiva uno solo y vuelve a ejecutar."
 	})
     return
 end
@@ -69,29 +110,29 @@ getgenv().TECHWARESILENTAIM_LOADED = true
 -- // creditos (si de verdad eliminas/editas esto para poner tus creditos, sos la persona mas triste del mundo)
 if techware_aimlock["configuracion general"]["modo metametodos"] then
 	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-		Title="suck my dick",
-		Text = "aimlock on"
+		Title="TECHWARE 最好的代碼",
+		Text = "AIMLOCK ACTIVADO\nMODO: METATABLAS POSITION SPOOFING\nHECHO POR CUTE_MISAEL"
 	})
 elseif techware_aimlock["configuracion general"]["modo manipulacion de camara"] then 
 	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-		Title="suck my dick",
-		Text = "aimlock on"
+		Title="TECHWARE 最好的代碼",
+		Text = "AIMLOCK ACTIVADO\nMODO: MANIPULACION DE CAMARA\nHECHO POR CUTE_MISAEL"
 	})
 end 
 
 wait(1.5)
 
 thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-    Title="suck my dick",
-    Text = "press k to deactive"
+    Title="TECHWARE 最好的代碼",
+    Text = "APRETA LA TECLA "..TECLAS_PARA_BUSCAR_PORNOGRAFIA.tecla3.." PARA ACTIVAR EL AIMLOCK"
 })
 thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-    Title="suck my dick",
-    Text = "press h to unlock"
+    Title="TECHWARE 最好的代碼",
+    Text = "APRETA LA TECLA "..TECLAS_PARA_BUSCAR_PORNOGRAFIA.tecla2.." PARA DESLOCKEAR"
 })
 thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-    Title="suck my dick",
-    Text = "press e to lock"
+    Title="TECHWARE 最好的代碼",
+    Text = "APRETA LA TECLA "..TECLAS_PARA_BUSCAR_PORNOGRAFIA.tecla1.." PARA LOCKEAR A ALGUIEN\n(pon el mouse sobre la persona que quieres lockear)"
 })
 
 -- // funciones utiles
@@ -131,8 +172,8 @@ function suicidio(mongolico)
 		drizzy_groomer.activado = false
         THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
         thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-            Title="suck my dick",
-            Text = "you die no aimlock"
+            Title="TECHWARE 最好的代碼",
+            Text = "te has muerto, el aimlock se desactivo."
         })
     end)
     feo.BodyEffects["K.O"].Changed:Connect(function()
@@ -140,8 +181,8 @@ function suicidio(mongolico)
             drizzy_groomer.activado = false
             THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
             thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-                Title="suck my dick",
-                Text = "you on da floor no aim."
+                Title="TECHWARE 最好的代碼",
+                Text = "te han tirado, el aimlock se desactivo."
             })
         end
     end)
@@ -156,8 +197,8 @@ function muerte(mongolico)
 				drizzy_groomer.victima_de_grooming = nil
 				THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
 				thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-					Title="suck my dick",
-					Text = "they threw the person lock no aim"
+					Title="TECHWARE 最好的代碼",
+					Text = "tiraron al que tenias lockeado, el aimlock se desactivo."
 				})
 			end
 			hong_kong:Disconnect() -- no queremos lag en el cliente
@@ -169,8 +210,8 @@ function muerte(mongolico)
 			drizzy_groomer.victima_de_grooming = nil
 			THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
 			thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-				Title="suck my dick",
-				Text = "person you locked died no aim"
+				Title="TECHWARE 最好的代碼",
+				Text = "murio el que tenias lockeado, el aimlock se desactivo."
 			})
 		end
 		china:Disconnect() -- no queremos lag en el cliente
@@ -200,8 +241,8 @@ DAHOODPLAYERS.PlayerRemoving:Connect(function(pelotudo)
         drizzy_groomer["victima_de_grooming"] = nil
         drizzy_groomer.activado = false
         thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-            Title="suck my dick",
-            Text = "person left no aim"
+            Title="TECHWARE 最好的代碼",
+            Text = "EL MARICON QUE LOCKEASTE SE FUE JAJAJA XD\nSE DESLOCKEO Y DESACTIVO EL AIMLOCK"
         })
     end
 end)
@@ -220,8 +261,8 @@ mordida_del_87.KeyDown:Connect(function(AMONGUS)
             if victima_de_grooming:FindFirstChild("Humanoid") and esautista(victima_de_grooming) then
                 drizzy_groomer.victima_de_grooming = matar_y_violar_su_cuerpo_putrefacto_como_haria_kiIIuli(victima_de_grooming)
                 thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-                    Title = "suck my dick",
-                    Text = "locked onto: "..victima_de_grooming.Name
+                    Title = "TECHWARE 最好的代碼",
+                    Text = "aimlock activado en: "..victima_de_grooming.Name
                 })
                 if victima_de_grooming:FindFirstChild("BodyEffects") and victima_de_grooming.BodyEffects:FindFirstChild("K.O") then 
 					if victima_de_grooming.BodyEffects["K.O"].Value == false then
@@ -235,8 +276,8 @@ mordida_del_87.KeyDown:Connect(function(AMONGUS)
             local anterior_victima = drizzy_groomer.victima_de_grooming
             drizzy_groomer.victima_de_grooming = nil
             thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-                Title = "suck my dick",
-                Text = "unlocked from: "..anterior_victima.Name
+                Title = "TECHWARE 最好的代碼",
+                Text = "aimlock desactivado en: "..anterior_victima.Name
             })
 	    wait(0.3)
 	    THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic 
@@ -245,16 +286,16 @@ mordida_del_87.KeyDown:Connect(function(AMONGUS)
         if drizzy_groomer.activado == true then
             drizzy_groomer.activado = false
             thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-                Title = "suck my dick",
-                Text = "aimlock turned off"
+                Title = "TECHWARE 最好的代碼",
+                Text = "aimlock 不再被激活 (false)"
             })
             wait(0.3)
             THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic 
         else
             drizzy_groomer.activado = true
             thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-                Title = "suck my dick",
-                Text = "aimlock turned back on"
+                Title = "TECHWARE 最好的代碼",
+                Text = "aimlock 活性 (true)"
             })
         end
     end
@@ -289,8 +330,8 @@ FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS:BindToRenderStep("HONG 
 end)
 else
     thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
-        Title="suck my dick",
-        Text = "Somehow, neither option is activated, what the fuck, Harry"
+        Title="TECHWARE 最好的代碼",
+        Text = "de algun modo, ninguna de las dos opciones esta activada que mierda harry"
     })
     return
 end
