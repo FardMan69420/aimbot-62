@@ -17,7 +17,7 @@
 -- // NOTAS:
 -- fuck UserInputService all my homies use GetMouse
 -- esta Open Source si al menos lo usas dame creditos peteeee
-
+]]
 
 -- // servicios
 local DAHOODPLAYERS = game:GetService("Players")
@@ -40,14 +40,26 @@ local drizzy_groomer = {
 
 -- // evita ejecutar el script si ya se ejecuto antes o el juego no es da hood
 if not techware_aimlock["configuracion general"]["sos down"] then 
+	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+	    Title="suck my dick",
+	    Text = "not work" en false"
+	})
     return
 end 
 
 if game.PlaceId ~= 2788229376 or TECHWARESILENTAIM_LOADED then
+	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+	    Title="suck my dick",
+	    Text = "this isnt dahood"
+	})
     return
 end
 
 if techware_aimlock["configuracion general"]["modo metametodos"] and techware_aimlock["configuracion general"]["modo manipulacion de camara"] then
+    thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+	    Title="suck my dick",
+	    Text = "only run one"
+	})
     return
 end
 
@@ -55,8 +67,31 @@ getgenv().TECHWARESILENTAIM_LOADED = true
 
 -- // creditos (si de verdad eliminas/editas esto para poner tus creditos, sos la persona mas triste del mundo)
 if techware_aimlock["configuracion general"]["modo metametodos"] then
+	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+		Title="suck my dick",
+		Text = "aimlock on"
+	})
 elseif techware_aimlock["configuracion general"]["modo manipulacion de camara"] then 
+	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+		Title="suck my dick",
+		Text = "aimlock on"
+	})
 end 
+
+wait(1.5)
+
+thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+    Title="suck my dick",
+    Text = "press k to deactive"
+})
+thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+    Title="suck my dick",
+    Text = "press h to unlock"
+})
+thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+    Title="suck my dick",
+    Text = "press e to lock"
+})
 
 -- // funciones utiles
 function esautista(minino_asesino)
@@ -94,11 +129,19 @@ function suicidio(mongolico)
     feo.Humanoid.Died:Connect(function()
 		drizzy_groomer.activado = false
         THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
+        thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+            Title="suck my dick",
+            Text = "you die no aimlock"
+        })
     end)
     feo.BodyEffects["K.O"].Changed:Connect(function()
         if feo.BodyEffects["K.O"].Value == true then
             drizzy_groomer.activado = false
             THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
+            thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+                Title="suck my dick",
+                Text = "you on da floor no aim."
+            })
         end
     end)
 end
@@ -111,7 +154,10 @@ function muerte(mongolico)
 				drizzy_groomer.activado = false
 				drizzy_groomer.victima_de_grooming = nil
 				THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
-
+				thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+					Title="suck my dick",
+					Text = "they threw the person lock no aim"
+				})
 			end
 			hong_kong:Disconnect() -- no queremos lag en el cliente
 		end)
@@ -121,6 +167,10 @@ function muerte(mongolico)
 			drizzy_groomer.activado = false
 			drizzy_groomer.victima_de_grooming = nil
 			THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic
+			thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+				Title="suck my dick",
+				Text = "person you locked died no aim"
+			})
 		end
 		china:Disconnect() -- no queremos lag en el cliente
 	end)
@@ -148,6 +198,10 @@ DAHOODPLAYERS.PlayerRemoving:Connect(function(pelotudo)
     if pelotudo == drizzy_groomer["victima_de_grooming"] then
         drizzy_groomer["victima_de_grooming"] = nil
         drizzy_groomer.activado = false
+        thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+            Title="suck my dick",
+            Text = "person left no aim"
+        })
     end
 end)
 
@@ -164,6 +218,10 @@ mordida_del_87.KeyDown:Connect(function(AMONGUS)
             end
             if victima_de_grooming:FindFirstChild("Humanoid") and esautista(victima_de_grooming) then
                 drizzy_groomer.victima_de_grooming = matar_y_violar_su_cuerpo_putrefacto_como_haria_kiIIuli(victima_de_grooming)
+                thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+                    Title = "suck my dick",
+                    Text = "locked onto: "..victima_de_grooming.Name
+                })
                 if victima_de_grooming:FindFirstChild("BodyEffects") and victima_de_grooming.BodyEffects:FindFirstChild("K.O") then 
 					if victima_de_grooming.BodyEffects["K.O"].Value == false then
 						muerte(matar_y_violar_su_cuerpo_putrefacto_como_haria_kiIIuli(victima_de_grooming))
@@ -175,16 +233,28 @@ mordida_del_87.KeyDown:Connect(function(AMONGUS)
         if drizzy_groomer.victima_de_grooming then
             local anterior_victima = drizzy_groomer.victima_de_grooming
             drizzy_groomer.victima_de_grooming = nil
+            thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+                Title = "suck my dick",
+                Text = "unlocked from: "..anterior_victima.Name
+            })
 	    wait(0.3)
 	    THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic 
         end
     elseif AMONGUS:lower() == TECLAS_PARA_BUSCAR_PORNOGRAFIA.tecla3:lower() then
         if drizzy_groomer.activado == true then
             drizzy_groomer.activado = false
+            thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+                Title = "suck my dick",
+                Text = "aimlock turned off"
+            })
             wait(0.3)
             THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.Classic 
         else
             drizzy_groomer.activado = true
+            thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+                Title = "suck my dick",
+                Text = "aimlock turned back on"
+            })
         end
     end
 end)
@@ -216,6 +286,12 @@ FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS:BindToRenderStep("HONG 
 		)
         end
 end)
+else
+    thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
+        Title="suck my dick",
+        Text = "Somehow, neither option is activated, what the fuck, Harry
+"
+    })
     return
 end
 
