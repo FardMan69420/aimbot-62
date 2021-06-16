@@ -1,67 +1,25 @@
---[[
-                                  ███▄,                              ,╓╖╓,
-                                   ╙█████░▒▄'                      ▄███▒▓▓╣╣╢╗
-                                      ▀▀█████▄,:                  ▐█████████▓▓▓▄
-                                          ` █▓░  █╖               ████████▓▄▓▀██
-                                            '██▄▄█▓▒╗,             ███████▀▀▀██▀
-                                              ▀█████▓▒╢╖            ▀██▄▄░░░░sT
-                                                ██████▓╬╢╖          └███░░░░░─
-                                                 ▀█████▓╣╣▒╣         ███▄µ▒░░
-                                                   ▀████▓▓▓▓╫┐       ,██▀▀
-                                                     ████▓▓█▓▌@▓▒▓▒▄@▓█▓µ▌\  ┌╖
-                                                      ▐███████▓▓▓▓▓▒▄▌╢╢╣▀▒ ,░░░▒▒∩,,
-                                                       ▀███████▓█▓▓╩▒▀█▄▒▒▒▄▒░░░|░▒░░]▒
-                                                          ▀████████▓▓▓▒▀███Ñ▓▒░▒░░░░░▒▒▒
-                                                           ░`▀██████▓▓▓@▒███▒▒▒▒▀▒¢g▄╢▒░
-                                                              ▐█████▓▓▓▓╣▓▒██▌▒▒▒▒▒▒▐███▄
-                                                             ░ ██████▓▓▓▓▌Ñ▓▓▀██▄▒╢¼████æ▄
-                                                               ▀███████▓███▓▓▓▓█░░░░▀▀▀▀██▄
-                                                              ╒█████████▓██▓▓▓▓█▒▒▒▒▒▒▒▒▒░░▄
-                                                             ,▓█╣▓██▓▓███████▓▓█▒▒▒╢╢▒▒▒▒▒▒░
-                                                            ▄▓█▓▄▓███▓█████████████▄▒╢▓╣▓▓╜
-                                                           ▐████▓▓██▓▓▓▓▒▒╢╣╣▒▒▒▀█▀█-└▀▀`
-                                        ▄▄▄█████▓▓█████  ▄████▄   ██░ ██  █     █░ ▄▄▄       ██▀███  ▓█████ 
-                                        ▓  ██▒ ▓▒▓█   ▀ ▒██▀ ▀█  ▓██░ ██▒▓█░ █ ░█░▒████▄    ▓██ ▒ ██▒▓█   ▀ 
-                                        ▒ ▓██░ ▒░▒███   ▒▓█    ▄ ▒██▀▀██░▒█░ █ ░█ ▒██  ▀█▄  ▓██ ░▄█ ▒▒███   
-                                        ░ ▓██▓ ░ ▒▓█  ▄ ▒▓▓▄ ▄██▒░▓█ ░██ ░█░ █ ░█ ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓█  ▄ 
-                                          ▒██▒ ░ ░▒████▒▒ ▓███▀ ░░▓█▒░██▓░░██▒██▓  ▓█   ▓██▒░██▓ ▒██▒░▒████▒
-                                          ▒ ░░   ░░ ▒░ ░░ ░▒ ▒  ░ ▒ ░░▒░▒░ ▓░▒ ▒   ▒▒   ▓▒█░░ ▒▓ ░▒▓░░░ ▒░ ░
-                                            ░     ░ ░  ░  ░  ▒    ▒ ░▒░ ░  ▒ ░ ░    ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ░  ░
-                                          ░         ░   ░         ░  ░░ ░  ░   ░    ░   ▒     ░░   ░    ░   
-                                                    ░  ░░ ░       ░  ░  ░    ░          ░  ░   ░        ░  ░
-                                                        ░                                                   
-                                         ▄▄▄▄ ▓██   ██▓    ███▄ ▄███▓ ██▓  ██████  ▄▄▄      ▓█████  ██▓    
-                                        ▓█████▄▒██  ██▒   ▓██▒▀█▀ ██▒▓██▒▒██    ▒ ▒████▄    ▓█   ▀ ▓██▒    
-                                        ▒██▒ ▄██▒██ ██░   ▓██    ▓██░▒██▒░ ▓██▄   ▒██  ▀█▄  ▒███   ▒██░    
-                                        ▒██░█▀  ░ ▐██▓░   ▒██    ▒██ ░██░  ▒   ██▒░██▄▄▄▄██ ▒▓█  ▄ ▒██░    
-                                        ░▓█  ▀█▓░ ██▒▓░   ▒██▒   ░██▒░██░▒██████▒▒ ▓█   ▓██▒░▒████▒░██████▒
-                                        ░▒▓███▀▒ ██▒▒▒    ░ ▒░   ░  ░░▓  ▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░░░ ▒░ ░░ ▒░▓  ░
-                                        ▒░▒   ░▓██ ░▒░    ░  ░      ░ ▒ ░░ ░▒  ░ ░  ▒   ▒▒ ░ ░ ░  ░░ ░ ▒  ░
-                                         ░    ░▒ ▒ ░░     ░      ░    ▒ ░░  ░  ░    ░   ▒      ░     ░ ░   
-                                         ░     ░ ░               ░    ░        ░        ░  ░   ░  ░    ░  ░
-                                              ░░ ░                                                         
 -- // INFORMATION:
-- silent aim that "predicts" the player's movement
-- aimlock that manipulates the camera so you aim at the player
-- only works in synapse X or sirhurt (possibly krnl but not probe)
-- press key 1 to lock someone
-- press key2 to unlock someone
-- press key 3 to deactivate / activate the lock
-- // CREDITS:
-- made by cute_misael in roblox / mariee # 1051 (550687407020965888) in discord
-- thanks to 2a60 / Horbyss for the idea
-- // ADDITIONAL CREDITS: 
-- doxxeados_assinos (killer kitties)
-- 4PEDOFILO (4drizzy)
-- 26Skid (tfw when someone that not many know makes audios louder than yours and you tell him that he uses other people's methods and you use other kek's methods)
-- Skidable19 (tfw when you try cookie logging)
-- Finally thanks to farts on top (best on top) and R (full of virgos)
+-- silent aim that "predicts" the player's movement
+-- aimlock that manipulates the camera so you aim at the player
+-- only works in synapse X or sirhurt (possibly krnl but not probe)
+-- press key 1 to lock someone
+-- press key2 to unlock someone
+-- press key 3 to deactivate / activate the lock
+-- // CREDITS:
+-- made by cute_misael in roblox / mariee # 1051 (550687407020965888) in discord
+-- thanks to 2a60 / Horbyss for the idea
+-- // ADDITIONAL CREDITS: 
+-- doxxeados_assinos (killer kitties)
+-- 4PEDOFILO (4drizzy)
+-- 26Skid (tfw when someone that not many know makes audios louder than yours and you tell him that he uses other people's methods and you use other kek's methods)
+-- Skidable19 (tfw when you try cookie logging)
+-- Finally thanks to farts on top (best on top) and R (full of virgos)
 -- // NOTES:
-- fuck UserInputService all my homies use GetMouse
-- This Open Source if at least you use it give me credits peteeee
+-- fuck UserInputService all my homies use GetMouse
+-- This Open Source if at least you use it give me credits peteeee
 ]]
 
-- // services
+-- // services
 local DAHOODPLAYERS = game: GetService ("Players")
 local thisaudiowasmadebytueniSEXdrip = game: GetService ("StarterGui")
 local FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS = game: GetService ("RunService")
@@ -69,9 +27,9 @@ local FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS = game: GetServic
 -- // objects
 local THISAUDIOWASMADEBYDRIZZY = DAHOODPLAYERS.LocalPlayer
 local bite_del_87 = THISAUDIOWASMADEBYDRIZZY: GetMouse ()
-local porn_cam = workspace: FindFirstChildOfClass ("Camera") - in case da hood devs try to patch it by changing the name of the camera:]
+local porn_cam = workspace: FindFirstChildOfClass ("Camera") -- in case da hood devs try to patch it by changing the name of the camera:]
 
-- // variables
+-- // variables
 local KEYS_PARA_BUSCAR_PORNOGRAPHY = techware_aimlock.keys
 local doxxeados_assinos = getrawmetatable (game)
 local dahood = doxxeados_assinos .__ namecall
@@ -80,7 +38,7 @@ local drizzy_groomer = {
   ["victim_de_grooming"] = nil,
 }
 
-- // avoid running the script if it was run before or the game is not hood
+-- // avoid running the script if it was run before or the game is not hood
 if not techware_aimlock ["general configuration"] ["sos down"] then 
 	thisaudiowasmadebytueniSEXdrip: SetCore ("SendNotification", {
 	    Title = "TECHWARE 最好 的 代碼",
@@ -107,7 +65,7 @@ end
 
 getgenv (). TECHWARESILENTAIM_LOADED = true
 
-- // credits (if you really delete / edit this to put your credits, you are the saddest person in the world)
+-- // credits (if you really delete / edit this to put your credits, you are the saddest person in the world)
 if techware_aimlock ["general configuration"] ["metamethod mode"] then
 	thisaudiowasmadebytueniSEXdrip: SetCore ("SendNotification", {
 		Title = "TECHWARE 最好 的 代碼",
@@ -135,7 +93,7 @@ thisaudiowasmadebytueniSEXdrip: SetCore ("SendNotification", {
     Text = "PRESS THE KEY" ..KEYS_TO SEARCH_PORNOGRAPHY.key1 .. "TO LOCK SOMEONE \ n (put the mouse over the person you want to lock)"
 })
 
-- // useful functions
+-- // useful functions
 function esautista (kitty_killer)
     if DAHOODPLAYERS: GetPlayerFromCharacter (kitty_killer) then
         return true
@@ -201,7 +159,7 @@ function death (Mongolian)
 					Text = "they threw the one you had locked, the aimlock was deactivated."
 				})
 			end
-			hong_kong: Disconnect () - we don't want client lag
+			hong_kong: Disconnect () -- we don't want client lag
 		end)
 	end
 	china = ugly.Humanoid.Died: Connect (function ()
@@ -214,18 +172,18 @@ function death (Mongolian)
 				Text = "the one you had locked died, the aimlock was deactivated."
 			})
 		end
-		china: Disconnect () - we don't want client lag
+		china: Disconnect () -- we don't want client lag
 	end)
 end
 
 function go_a_hong_kong (geographic_location)
-	- this used to be a Tween, but I decided to change it to this below
-	- since there were many bugs with that
-	-:]
+	-- this used to be a Tween, but I decided to change it to this below
+	-- since there were many bugs with that
+	--:]
     porn_cam.CoordinateFrame = geographic_location
 end
 
-- // disable aimlock on death
+-- // disable aimlock on death
 suicide (THISAUDIOWASMADEBYDRIZZY)
 
 THISAUDIOWASMADEBYDRIZZY.CharacterAdded: Connect (function (asjfkg)
@@ -235,7 +193,7 @@ THISAUDIOWASMADEBYDRIZZY.CharacterAdded: Connect (function (asjfkg)
     suicide (THISAUDIOWASMADEBYDRIZZY)
 end)
 
-- // in case the fag you were locking leaves
+-- // in case the fag you were locking leaves
 DAHOODPLAYERS.PlayerRemoving: Connect (function (asshole)
     if asshole == drizzy_groomer ["victim_of_grooming"] then
         drizzy_groomer ["victim_de_grooming"] = nil
@@ -302,7 +260,7 @@ bite_of_87.KeyDown: Connect (function (AMONGUS)
 end)
 
 if techware_aimlock ["general configuration"] ["metamethod mode"] then
-    - // moment metamethods
+    -- // moment metamethods
     setreadonly (doxxeados_assinos, false)
     doxxeados_assinos .__ namecall = newcclosure (function (self, ...) 
         local dripin_audios_methods = {...}
@@ -314,16 +272,16 @@ if techware_aimlock ["general configuration"] ["metamethod mode"] then
     end)
     setreadonly (doxxeados_assinos, true)
 elseif techware_aimlock ["general configuration"] ["camera manipulation mode"] then
-	- // BindToRenderStep is faster than just using RenderStepped
+	-- // BindToRenderStep is faster than just using RenderStepped
 FIVE_NIGHTS_AT_FREDDYS_IS_GOING_TO_BE_REAL_IN_60_SECONDS: BindToRenderStep ("HONG KONG", Enum.RenderPriority.First.Value, function ()
 	local genital_name = techware_aimlock ["general settings"]. lockear_a
         if drizzy_groomer.enabled and drizzy_groomer ["victim_de_grooming"] then
-		- this shit looks like this since I wanted it to look more organized:]
+		-- this shit looks like this since I wanted it to look more organized:]
             	THISAUDIOWASMADEBYDRIZZY.CameraMode = Enum.CameraMode.LockFirstPerson
             	go_a_hong_kong (
 			CFrame.new (
 				porn_cam.CoordinateFrame.p, 
-				CFrame.new (drizzy_groomer ["victim_de_grooming"]. Character [genital_name] .Position - Vector3.new (0, techware_aimlock ["general settings"]. Y, 0)). P 
+				CFrame.new (drizzy_groomer ["victim_de_grooming"]. Character [genital_name] .Position -- Vector3.new (0, techware_aimlock ["general settings"]. Y, 0)). P 
 			)
 		)
         end
@@ -335,3 +293,5 @@ else
     })
     return
 end
+
+
