@@ -1,3 +1,4 @@
+--[[
 -- // INFORMACION:
 -- silent aim que "predice" el movimiento del jugador
 -- aimlock que manipula la camara asi apuntas al jugador
@@ -42,7 +43,7 @@ local drizzy_groomer = {
 if not techware_aimlock["configuracion general"]["sos down"] then 
 	thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
 	    Title="suck my dick",
-	    Text = "not work" en false"
+	    Text = "script not work" en false
 	})
     return
 end 
@@ -289,10 +290,7 @@ end)
 else
     thisaudiowasmadebytueniSEXdrip:SetCore("SendNotification",{
         Title="suck my dick",
-        Text = "Somehow, neither option is activated, what the fuck, Harry
-"
+        Text = "Somehow, neither option is activated, what the fuck, Harry"
     })
     return
 end
-
-
